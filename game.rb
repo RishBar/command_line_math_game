@@ -18,13 +18,7 @@ class Game
       puts "Question for #{player.name}"
       question = Question.new
       puts question.question
-      if gets.chomp.to_i == question.num_one + question.num_two
-        puts 'Correct'
-        question.true_false = true
-      else
-        puts 'Wrong'
-        question.true_false = false
-      end
+      question.question_correct?(gets.chomp)
       if !question.true_false
         player.score += -1
       end
