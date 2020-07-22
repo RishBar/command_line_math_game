@@ -1,15 +1,8 @@
 class Question
-  attr_accessor :true_false
+  attr_accessor :true_false, :question, :num_one, :num_two
   def initialize
-    num_one = rand(20)
-    num_two = rand(20)
-    puts "#{num_one} + #{num_two} = ?"
-    if gets.chomp.to_i == num_one + num_two
-      puts 'Correct'
-      @true_false = true
-    else
-      puts 'Wrong'
-      @true_false = false
-    end
+    @num_one = rand(20)
+    @num_two = rand(20)
+    @question = "#{@num_one} + #{@num_two} = ?"
   end
 end

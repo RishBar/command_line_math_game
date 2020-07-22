@@ -2,7 +2,7 @@ require './player'
 require './question'
 class Game
   attr_accessor :player_one, :player_two
-  def initialize()
+  def initialize
     puts 'Player 1 name?'
     @player_one = Player.new(gets.chomp)
     puts 'Player 2 name?'
@@ -17,6 +17,14 @@ class Game
       other_player = counter % 2 == 1? @player_one : @player_two
       puts "Question for #{player.name}"
       question = Question.new
+      puts question.question
+      if gets.chomp.to_i == question.num_one + question.num_two
+        puts 'Correct'
+        question.true_false = true
+      else
+        puts 'Wrong'
+        question.true_false = false
+      end
       if !question.true_false
         player.score += -1
       end
@@ -32,5 +40,4 @@ class Game
       end
     end
   end
-
 end
