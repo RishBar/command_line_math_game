@@ -1,27 +1,5 @@
-class Player
-  attr_accessor :name, :score
-  def initialize(name)
-    @name = name
-    @score = 3
-  end
-end
-
-class Question
-  attr_accessor :true_false
-  def initialize
-    num_one = rand(20)
-    num_two = rand(20)
-    puts "#{num_one} + #{num_two} = ?"
-    if gets.chomp.to_i == num_one + num_two
-      puts 'Correct'
-      @true_false = true
-    else
-      puts 'Wrong'
-      @true_false = false
-    end
-  end
-end
-
+require './player'
+require './question'
 class Game
   attr_accessor :player_one, :player_two
   def initialize()
@@ -54,7 +32,5 @@ class Game
       end
     end
   end
-end
 
-p = Game.new
-p.start_game
+end
