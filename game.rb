@@ -21,6 +21,9 @@ class Game
       question.question_correct?(gets.chomp)
       if !question.true_false
         player.score += -1
+        puts "Wrong!"
+      else
+        puts "CORRECT!"
       end
       if player.score.positive?
         puts "#{player.name} has a score of #{player.score}/3"

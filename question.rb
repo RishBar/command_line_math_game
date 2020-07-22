@@ -7,10 +7,8 @@ class Question
   end
   def question_correct?(answer)
     if answer.to_i == @num_one + @num_two
-      puts 'Correct'
       @true_false = true
     else
-      puts 'Wrong'
       @true_false = false
     end
   end
